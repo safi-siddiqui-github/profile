@@ -10,7 +10,6 @@
     "git:push": "git add . && git commit -m 'update' && git push",
     "node:rename": "node script.js",
     "deploy": "npm run node:rename && npm run git:push"
-
   },
   "devDependencies": {
     "prettier": "^3.5.3",

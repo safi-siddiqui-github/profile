@@ -1,7 +1,13 @@
-import fs from 'node:fs'
+import fs from 'node:fs';
+import path from 'node:path';
 
-const oldFolderName = './dist'; // Path to the folder you want to rename
-const newFolderName = './docs'; // The new name and path for the folder
+const oldFolderName = './dist';
+const newFolderName = './docs';
+
+if (fs.existsSync(newFolderName)) {
+  fs.rmSync(newFolderName, { recursive: true, force: true });
+  console.log(`Deleted existing folder: ${newFolderName}`);
+}
 
 fs.rename(oldFolderName, newFolderName, (err) => {
   if (err) {
